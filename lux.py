@@ -123,8 +123,8 @@ routes = [
 
 app = Starlette(debug=True, routes=routes)
 
-print("Updating lux to the newest version")
-update()
+# print("Updating lux to the newest version")
+# update()
 
 app_vars = ChainMap(os.environ, app_defaults)
 
