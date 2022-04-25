@@ -111,7 +111,7 @@ def get_ydl_options(request_options):
 
 
 def download(url, request_options):
-    os.system('lux -o /downloads' + url)
+    os.system('lux -o /downloads ' + url)
 
 
 routes = [
