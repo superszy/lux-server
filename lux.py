@@ -49,7 +49,7 @@ async def update_route(scope, receive, send):
 def update():
     try:
         output = subprocess.check_output(
-            [sys.executable, "-m", "go", "install", "github.com/iawia002/lux@latest"]
+            ["go", "install", "github.com/iawia002/lux@latest"]
         )
 
         print(output.decode("ascii"))
