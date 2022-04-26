@@ -1,4 +1,4 @@
-import os, sys, subprocess
+import os, subprocess
 
 from starlette.applications import Starlette
 from starlette.staticfiles import StaticFiles
@@ -25,7 +25,6 @@ async def dl_queue_list(request):
 async def q_put(request):
     form = await request.form()
     url = form.get("url").strip()
-    options = {"format": form.get("format")}
 
     if not url:
         return JSONResponse(
@@ -36,7 +35,7 @@ async def q_put(request):
 
     print("Added url " + url + " to the download queue")
     return JSONResponse(
-        {"success": True, "url": url, "options": options}, background=task
+        {"success": True, "url": url}, background=task
     )
 
 
