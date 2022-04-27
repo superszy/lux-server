@@ -32,7 +32,7 @@
             </div>
           </div>
           <div>
-            <label id="result" name="result">Please Submit</label>
+            <label id="result">Please Submit</label>
           </div>
         </form>
       </div>
@@ -58,12 +58,10 @@
         url : submitform.url.value
       },
       function(result){
-        debugger;
-        let text = (result.success ? "Success" : "Failed") + ": " + result.url;
-        document.getElementById('result').innerHTML = text;
-
-        submitform.url.value = "";
+        $("#result").html((result.success ? "Success" : "Failed") + ": " + result.url);
       });
+
+      submitform.url.value = "";
     }
   </script>
 </body>
