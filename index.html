@@ -58,7 +58,7 @@
         url : submitform.url.value
       },
       function(result){
-        $("#result").html((result.success ? "Success" : "Failed") + ": " + result.url);
+        $("#result").html((result.success ? "<span style='color:green'>Success</span>" : "<span style='color:red'>Failed</span>") + " : " + result.url);
       });
 
       submitform.url.value = "";
