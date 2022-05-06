@@ -1,9 +1,12 @@
 FROM python:alpine
 
+COPY --from=golang:alpine /usr/local/go/ /usr/local/go/
+ 
+ENV PATH="/usr/local/go/bin:${PATH}"
+
 RUN apk add --no-cache \
   ffmpeg \
-  tzdata \
-  go
+  tzdata
 
 ENV GOPATH=/lux
 
