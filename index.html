@@ -53,6 +53,11 @@
 
   <script>    
     function doSubmit(){
+      let index = submitform.url.value.indexOf("http");
+      if (index > -1){
+        submitform.url.value = submitform.url.value.substring(index);
+      }
+
       $.post("/lux/q",
       {
         url : submitform.url.value
