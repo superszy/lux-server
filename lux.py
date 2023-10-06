@@ -10,7 +10,7 @@ from starlette.background import BackgroundTask
 import uvicorn
 from collections import ChainMap
 
-templates = Jinja2Templates(directory="")
+templates = Jinja2Templates(directory='templates')
 
 app_defaults = {
     "SERVER_HOST": "0.0.0.0",
